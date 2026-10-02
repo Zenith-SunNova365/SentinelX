@@ -1,0 +1,165 @@
+{
+  "assessments": [
+    {
+      "id": "ASM-001",
+      "name": "World Monitor Security Assessment",
+      "target": "World Monitor",
+      "environment": "Authorized Testing Environment",
+      "status": "IN PROGRESS",
+      "progress": 60,
+      "leadAnalyst": "Sarah Chen",
+      "createdAt": "2026-09-27"
+    },
+    {
+      "id": "ASM-002",
+      "name": "Demo Security Assessment",
+      "target": "World Monitor",
+      "environment": "Authorized Testing Environment",
+      "status": "NOT STARTED",
+      "progress": 0,
+      "leadAnalyst": "Sarah Chen",
+      "createdAt": "2026-09-27T14:49:01.249Z"
+    },
+    {
+      "id": "ASM-003",
+      "name": "Demo Security Assessment",
+      "target": "World Monitor",
+      "environment": "Authorized Testing Environment",
+      "status": "NOT STARTED",
+      "progress": 0,
+      "leadAnalyst": "Sarah Chen",
+      "createdAt": "2026-09-27T15:43:47.639Z"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-001",
+      "name": "Authentication Validation",
+      "category": "Authentication",
+      "status": "PASSED",
+      "description": "Validate authentication controls"
+    },
+    {
+      "id": "TEST-002",
+      "name": "Authorization Validation",
+      "category": "Authorization",
+      "status": "FAILED",
+      "description": "Validate role-based authorization"
+    },
+    {
+      "id": "TEST-003",
+      "name": "API Security Validation",
+      "category": "API Security",
+      "status": "REVIEW",
+      "description": "Validate API security controls"
+    },
+    {
+      "id": "TEST-004",
+      "name": "Security Headers Check",
+      "category": "Security Headers",
+      "status": "NOT TESTED",
+      "description": "Validate security headers"
+    },
+    {
+      "id": "TEST-005",
+      "name": "Input Validation Check",
+      "category": "Input Validation",
+      "status": "NOT TESTED",
+      "description": "Validate application input handling"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "VULN-001",
+      "assessmentId": "ASM-001",
+      "title": "Broken Access Control",
+      "severity": "HIGH",
+      "cvss": 8.1,
+      "component": "User Management API",
+      "status": "RESOLVED",
+      "description": "Authorization validation requires review.",
+      "remediation": "Implement server-side authorization checks."
+    },
+    {
+      "id": "VULN-002",
+      "assessmentId": "ASM-001",
+      "title": "Missing Rate Limiting",
+      "severity": "MEDIUM",
+      "cvss": 5.3,
+      "component": "Authentication API",
+      "status": "OPEN",
+      "description": "Rate limiting should be implemented.",
+      "remediation": "Add appropriate API rate limiting."
+    },
+    {
+      "id": "VULN-003",
+      "assessmentId": "ASM-001",
+      "title": "Weak Security Headers",
+      "severity": "LOW",
+      "cvss": 3.1,
+      "component": "Web Application",
+      "status": "RESOLVED",
+      "description": "Security headers require improvement.",
+      "remediation": "Configure recommended security headers."
+    },
+    {
+      "id": "VULN-004",
+      "assessmentId": "ASM-001",
+      "title": "Broken Access Control",
+      "severity": "HIGH",
+      "cvss": 8.1,
+      "component": "User Management API",
+      "status": "OPEN",
+      "description": "Controlled authorization test identified an access-control issue.",
+      "remediation": "Implement server-side authorization checks."
+    }
+  ],
+  "remediations": [
+    {
+      "id": "REM-001",
+      "vulnerabilityId": "VULN-001",
+      "status": "IN PROGRESS",
+      "assignedTo": "Rahul Mehta",
+      "recommendation": "Implement server-side authorization checks."
+    }
+  ],
+  "retests": [
+    {
+      "id": "RETEST-001",
+      "vulnerabilityId": "VULN-003",
+      "result": "PASS",
+      "notes": "Security headers were corrected.",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "RETEST-002",
+      "vulnerabilityId": "VULN-001",
+      "result": "PASS",
+      "notes": "Authorization controls passed during controlled retest.",
+      "date": "2026-09-27T15:45:15.296Z"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EVD-001",
+      "vulnerabilityId": "VULN-001",
+      "type": "HTTP Request/Response",
+      "description": "Controlled test evidence demonstrating an authorization validation issue.",
+      "fileName": "authorization-test.txt"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "LOG-001",
+      "action": "Assessment Created",
+      "user": "Sarah Chen",
+      "timestamp": "2026-09-27T10:00:00Z"
+    },
+    {
+      "id": "LOG-002",
+      "action": "Security Test Executed",
+      "user": "Sarah Chen",
+      "timestamp": "2026-09-27T10:15:00Z"
+    }
+  ]
+}
